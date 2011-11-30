@@ -58,5 +58,6 @@ database though so I tested it on the class's database but I altered the code I 
 in so that it does create the database so I believe it should work. 
 
 If for some reason the form does not work then putting a file called "example_input.tab" in 
-the directory with runLoad.sh and then running runLoad.sh should work as well
+the directory with runLoad.sh and then running runLoad.sh should work as well. The supplied
+"example_input.tab" which was given to us already exists in this directory for this purpose.
 
