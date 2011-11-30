@@ -6,9 +6,9 @@ import java.sql.SQLException;
 
 public class DbManager {
         static private String databaseURL = "jdbc:mysql://localhost:3306/";
-        static private String dbname = "CS144";
-        static private String username = "cs144";
-        static private String password = "";
+        static private String dbname = "LivingSocial";
+        static private String username = "jasonstsao";
+        static private String password = "jas0ntsao";
 	
 	/**
 	 * Opens a database connection
@@ -29,7 +29,7 @@ public class DbManager {
 	
 	static {
 		try {
-			 //Class.forName("my.sql.Driver").newInstance();
+			
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
 		} catch(Exception e) {
 			e.printStackTrace();

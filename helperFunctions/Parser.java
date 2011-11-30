@@ -24,10 +24,12 @@ public class Parser{
 		try{
 		 FileWriter itemStream = new FileWriter("Items.csv", true);
         	 BufferedWriter writer = new BufferedWriter(itemStream);
-		//PrintWriter writer = new PrintWriter(new FileWriter("loadFile.sql")); 
 		FileReader reader = new FileReader(itemFile); 
 		BufferedReader br = new BufferedReader(reader); 
 		int count = 0;
+		double itemPrice = 0;
+		int purchaseCount = 0;
+		double totalRevenue = 0;
 	
 	
 		while((s = br.readLine()) != null) { 
@@ -47,16 +49,26 @@ public class Parser{
 				
 				if( i == 5)
 				insert += splitList[i];
+				
+				if( i == 2)
+				itemPrice = Double.parseDouble(splitList[i]);
+				
+				if( i == 3)
+				purchaseCount = Integer.parseInt(splitList[i]);
+				
 			}
+			totalRevenue += (itemPrice * purchaseCount);
 			
 			try{
-				System.out.println(insert);
+				//System.out.println(insert);
         			writer.write(insert + "\n");
         		}catch (Exception e){//Catch exception if any
         		  System.err.println("Error: " + e.getMessage());
 			}
 			count++;
 		}
+		
+		System.out.println("Total Revenue: " + totalRevenue);
 		
 		writer.close();	
 		} catch (IOException e){//Catch exception if any
@@ -75,7 +87,7 @@ public class Parser{
    		
 	}
 	catch ( Exception e){
-	System.out.println("Exception Caught.\n");
+	System.out.println(e);
 	}
 	
     }

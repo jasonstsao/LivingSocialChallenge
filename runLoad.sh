@@ -2,17 +2,19 @@ javac helperFunctions/Parser.java
 javac helperFunctions/CalculateRevenue.java
 javac helperFunctions/DbManager.java
 
-mysql CS144 < drop.sql
+mysql < createDatabase
 
-mysql CS144 < create.sql
+mysql LivingSocial < drop.sql
+
+mysql LivingSocial < create.sql
 
 java helperFunctions/Parser "example_input.tab"
 
-mysql CS144 < load.sql 
+mysql LivingSocial < load.sql 
 
 rm Items.csv
 
-java helperFunctions/CalculateRevenue;
+#java helperFunctions/CalculateRevenue;
 
 
 
